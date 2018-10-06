@@ -8,20 +8,20 @@ const lastMenuItem = document.querySelector(".last-menu-item");
 let turn = 0;
 
 window.setInterval(() => {
-  turn <= -400 || turn > 0 ? (turn = 0) : null;
-  moveHeaders();
   turn -= 100;
+  turn <= -399 || turn > 0 ? (turn = 0) : null;
+  moveHeaders();
 }, 10000);
 
 controllers.forEach(controller => {
   controller.addEventListener("click", function() {
     if (this.textContent === "Next") {
-      turn <= -400 || turn > 0 ? (turn = 0) : null;
-      moveHeaders();
       turn -= 100;
+      turn <= -399 || turn > 0 ? (turn = 0) : null;
+      moveHeaders();
     } else {
-      turn < -400 || turn >= 0 ? (turn = -400) : null;
       turn += 100;
+      turn <= -399 || turn > 0 ? (turn = -300) : null;
       moveHeaders();
     }
   });
