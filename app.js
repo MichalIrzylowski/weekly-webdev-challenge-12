@@ -20,9 +20,9 @@ controllers.forEach(controller => {
       moveHeaders();
       turn -= 100;
     } else {
-      turn <= -400 || turn > 0 ? (turn = -300) : null;
-      moveHeaders();
+      turn < -400 || turn >= 0 ? (turn = -400) : null;
       turn += 100;
+      moveHeaders();
     }
   });
 });
