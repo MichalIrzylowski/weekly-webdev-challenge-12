@@ -27,7 +27,9 @@ ul {
 }
 
 header {
-  display: inline-flex;
+  display: flex;
+  overflow: hidden;
+  width: 100vw;
 }
 
 footer {
@@ -54,10 +56,9 @@ footer {
   font-size: 150px;
   opacity: 0.25;
   z-index: -1;
-  height: 150px;
+  font-size: 150px;
   font-weight: lighter;
-  line-height: 100px;
-  height: 100px;
+  line-height: 150px;
 }
 
 .logo__text {
@@ -166,6 +167,7 @@ header.active {
 .header {
   width: 100vw;
   height: 100vh;
+  flex-shrink: 0;
   position: relative;
   overflow: hidden;
   transition: 1s;
