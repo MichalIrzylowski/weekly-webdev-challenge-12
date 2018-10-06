@@ -258,11 +258,12 @@ nav.active {
   top: 50%;
   left: 15px;
   transform: translate(0, -50%);
-  width: 415px;
+  width: calc(100vw - 60px);
 }
 
 .nav-list img {
   margin-bottom: 16px;
+  width: 100%;
 }
 
 .socials {
@@ -321,6 +322,14 @@ nav.active {
 
   .socials {
     left: 85px;
+  }
+
+  .nav-list {
+    width: 415px;
+  }
+
+  .nav-list img {
+    width: initial;
   }
 }
 
