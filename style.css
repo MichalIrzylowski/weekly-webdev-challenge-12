@@ -202,19 +202,14 @@ header.active {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 60px;
+  font-size: 30px;
   text-align: center;
   color: white;
   white-space: nowrap;
 }
 
 .header__text {
-  position: absolute;
-  top: 50%;
-  font-size: 47px;
-  color: #fff;
-  opacity: 0.25;
-  font-weight: bold;
+  display: none;
 }
 
 .header__text.right {
@@ -294,12 +289,15 @@ nav.active {
   position: absolute;
   bottom: 0;
   left: 0;
+  width: 97px;
 }
 
 .contact {
   position: absolute;
   right: 0;
   bottom: 0;
+  width: 180px;
+  text-align: right;
 }
 
 .contact a {
@@ -308,8 +306,23 @@ nav.active {
 }
 
 @media screen and (min-width: 501px) {
+  .header__title {
+    font-size: 60px;
+  }
+
+  .header__text {
+    display: inline;
+    position: absolute;
+    top: 50%;
+    font-size: 60px;
+    color: #fff;
+    opacity: 0.25;
+    font-weight: bold;
+  }
+
   .options {
     top: 65px;
+    left: 85px;
   }
 
   .languages {
@@ -330,6 +343,14 @@ nav.active {
 
   .nav-list img {
     width: initial;
+  }
+
+  .copyrights {
+    width: 200px;
+  }
+
+  .contact {
+    width: 202px;
   }
 }
 
