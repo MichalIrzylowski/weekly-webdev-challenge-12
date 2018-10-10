@@ -9,6 +9,15 @@ ul {
   list-style-type: none;
 }
 
+nav {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  background-color: #fff;
+  font-size: 18px;
+}
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -162,9 +171,61 @@ main {
   font-weight: bold;
 }
 
+/* === nav styles ===*/
+nav {
+  transform: translateX(-100%);
+  transition: 0.5s 0.5s;
+}
+
+nav li {
+  cursor: pointer;
+}
+
+nav.active {
+  transform: translateX(0);
+}
+
+.options {
+  position: absolute;
+  left: 15px;
+  top: 65px;
+  width: 120px;
+  justify-content: space-between;
+}
+
+.languages {
+  position: absolute;
+  top: 65px;
+  right: 30px;
+  width: 91px;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.nav-list {
+  height: 355px;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(0, -50%);
+  width: calc(100vw - 60px);
+}
+
+.nav-list img {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.socials {
+  position: absolute;
+  bottom: 65px;
+  left: 15px;
+  width: 264px;
+  justify-content: space-between;
+}
+
 /* === footer styles === */
-.logo_and_motto,
-.main {
+.logo_and_motto {
   display: flex;
 }
 
@@ -209,9 +270,92 @@ p {
   margin-top: 30px;
 }
 
+@media screen and (min-width: 501px) {
+  .options {
+    top: 65px;
+    left: 85px;
+  }
+
+  .languages {
+    right: 85px;
+  }
+
+  .nav-list {
+    left: 85px;
+  }
+
+  .socials {
+    left: 85px;
+  }
+
+  .nav-list {
+    width: 415px;
+  }
+
+  .nav-list img {
+    width: initial;
+  }
+
+  .copyrights {
+    width: 200px;
+  }
+
+  .contact {
+    width: 202px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    width: 720px;
+    flex-direction: row;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .works__card {
+    width: 300px;
+  }
+
+  .works__card img {
+    width: 300px;
+  }
+
+  footer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .logo_and_motto {
+    width: 200px;
+  }
+
+  .logo_and_motto p {
+    text-align: left;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   nav {
     width: 50vw;
+  }
+
+  header {
+    width: 950px;
+    text-align: center;
+    font-size: 28px;
+  }
+
+  ul a {
+    font-size: 16px;
+  }
+
+  nav a {
+    font-size: 18px;
   }
 
   .menu-desktop__item span {
@@ -230,15 +374,105 @@ p {
     font-size: 100px;
   }
 
+  main {
+    width: 1100px;
+  }
+
+  .works__card {
+    width: initial;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  .works__card figcaption {
+    font-size: 20px;
+  }
+
+  .works__card img,
+  .works__card figcaption {
+    position: relative;
+  }
+
+  .works__card:nth-child(1) img {
+    width: 549px;
+  }
+
+  .works__card:nth-child(2) img,
+  .works__card:nth-child(2) figcaption {
+    width: 483px;
+    top: 100px;
+  }
+
+  .works__card:nth-child(3) img,
+  .works__card:nth-child(3) figcaption {
+    width: 561px;
+    top: 130px;
+  }
+
+  .works__card:nth-child(4) img {
+    width: 452px;
+  }
+
+  .works__card:nth-child(5) img {
+    width: 909px;
+    margin-top: 200px;
+  }
+
+  .works__card:nth-child(6) img {
+    width: 416px;
+    margin-top: 130px;
+  }
+
+  .works__card:nth-child(7) img {
+    width: 612px;
+    margin-top: 170px;
+  }
+
   .burger-icon.active div:nth-child(1) {
-    background-color: #fff;
+    background-color: #000;
   }
 
   .burger-icon.active div:nth-child(2) {
-    background-color: #fff;
+    background-color: #000;
   }
 
   .burger-icon.active div:nth-child(3) {
-    background-color: #fff;
+    background-color: #000;
+  }
+
+  footer {
+    margin-top: 140px;
+  }
+
+  .logo_and_motto {
+    width: 320px;
+    align-items: center;
+    margin-top: 0;
+    margin-right: 165px;
+  }
+
+  .logo_and_motto img {
+    width: 63px;
+    height: 76px;
+  }
+
+  .logo_and_motto .motto {
+    font-size: 36px;
+    width: 200px;
+  }
+
+  .adress:nth-child(5) {
+    margin-left: 550px;
+  }
+
+  .adress h5,
+  .adress p {
+    text-align: left;
   }
 }
