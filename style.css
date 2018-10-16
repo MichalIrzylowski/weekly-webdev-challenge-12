@@ -284,6 +284,7 @@ nav.active {
   position: absolute;
   top: 0;
   right: 0;
+  display: none;
 }
 
 .controllers button {
@@ -360,7 +361,7 @@ nav.active {
   }
 
   .contact {
-    width: 202px;
+    width: 240px;
   }
 }
 
@@ -395,5 +396,9 @@ nav.active {
 
   .burger-icon.active div:nth-child(3) {
     background-color: #fff;
+  }
+
+  .controllers {
+    display: block;
   }
 }

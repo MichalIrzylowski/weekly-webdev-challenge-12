@@ -7,11 +7,38 @@ const lastMenuItem = document.querySelector(".last-menu-item");
 
 let turn = 0;
 
-window.setInterval(() => {
+let touchStartX, touchEndX;
+
+const headerInterval = setInterval(() => {
   turn -= 100;
   turn <= -399 || turn > 0 ? (turn = 0) : null;
   moveHeaders();
 }, 10000);
+
+headers.forEach(header => {
+  header.addEventListener("touchstart", e => {
+    touchStartX = (e.changedTouches[0].clientX / window.innerWidth) * 100;
+  });
+
+  header.addEventListener("touchmove", e => {
+    let movePoints = (e.changedTouches[0].pageX / window.innerWidth) * 100;
+    const side = touchStartX < movePoints ? movePoints : -movePoints;
+    moveHeaders(side);
+  });
+
+  header.addEventListener("touchend", e => {
+    touchEndX = (e.changedTouches[0].pageX / window.innerWidth) * 100;
+    if (!(touchEndX > touchStartX)) {
+      turn -= 100;
+      turn <= -399 || turn > 0 ? (turn = 0) : null;
+      moveHeaders();
+    } else {
+      turn += 100;
+      turn <= -399 || turn > 0 ? (turn = -300) : null;
+      moveHeaders();
+    }
+  });
+});
 
 controllers.forEach(controller => {
   controller.addEventListener("click", function() {
@@ -41,8 +68,9 @@ function serviceTheMenu() {
   nav.classList.toggle("active");
 }
 
-function moveHeaders() {
+function moveHeaders(movePts) {
+  let move = movePts ? turn + movePts : turn;
   headers.forEach(header => {
-    header.style.transform = `translateX(${turn}%)`;
+    header.style.transform = `translateX(${move}%)`;
   });
 }
